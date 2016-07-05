@@ -1,6 +1,6 @@
 (set-env!
  :resource-paths #{"resources"}
- :dependencies '[[cljsjs/boot-cljsjs "0.5.0" :scope "test"]])
+ :dependencies '[[cljsjs/boot-cljsjs "0.5.2" :scope "test"]])
 
 (require '[cljsjs.boot-cljsjs.packaging :refer :all]
          '[boot.core :as boot]
@@ -8,14 +8,15 @@
          '[clojure.java.io :as io]
          '[boot.util :refer [sh]])
 
-(def +lib-version+ "0.1.16")
+(def +fork+ "figly")
+(def +lib-version+ "0.1.22-maps")
 (def +version+ (str +lib-version+ "-0"))
 
 (task-options!
  pom  {:project     'cljsjs/msgpack-lite
        :version     +version+
        :description "Fast pure JavaScript MessagePack encoder and decoder"
-       :url         "https://github.com/kawanet/msgpack-lite"
+       :url         (str "https://github.com/" +fork+ "/msgpack-lite")
        :scm         {:url "https://github.com/cljsjs/packages"}
        :license     {"MIT" "http://opensource.org/licenses/MIT"}})
 
@@ -35,8 +36,8 @@
 
 (deftask package []
   (comp
-   (download :url (str "https://github.com/kawanet/msgpack-lite/archive/" +lib-version+ ".zip")
-             :checksum "AECD02AABF1ADD8ED7771CD541980E84"
+   (download :url (str "https://github.com/" +fork+ "/msgpack-lite/archive/" +lib-version+ ".zip")
+             :checksum "c72477e01c04d3dfcef25ca60fab1a75"
              :unzip true)
    (build-msgpack-lite)
    (sift :move {#"^msgpack-lite-.*/dist/msgpack\.browserify\.js" "cljsjs/msgpack-lite/development/msgpack-lite.inc.js"
