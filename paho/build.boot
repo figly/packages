@@ -1,7 +1,7 @@
 (set-env!
   :resource-paths #{"resources"}
   :dependencies '[[adzerk/bootlaces   "0.1.13" :scope "test"]
-                  [cljsjs/boot-cljsjs "0.5.1" :scope "test"]])
+                  [cljsjs/boot-cljsjs "0.5.2" :scope "test"]])
 
 (require '[adzerk.bootlaces :refer :all]
          '[cljsjs.boot-cljsjs.packaging :refer :all])
@@ -27,4 +27,6 @@
     ;; doesn't play ball with the Google Closure compiler for some reason
     (sift :move {#"^paho.javascript-\d.\d.\d/mqttws31.js$"     "cljsjs/paho/development/mqttws31.inc.js" })
     (sift :include #{#"^cljsjs"})
-    (deps-cljs :name "cljsjs.paho")))
+    (deps-cljs :name "cljsjs.paho")
+    (pom)
+    (jar)))

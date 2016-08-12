@@ -4,6 +4,8 @@ machine:
   environment:
     BOOT_VERSION: 2.5.5
     _JAVA_OPTIONS: "-Xms512m -Xmx1024m"
+  node:
+    version: v4.4.5
 dependencies:
   cache_directories:
     - "~/.boot/cache/lib"
@@ -13,9 +15,11 @@ dependencies:
     - chmod +x ~/bin/boot
     - mkdir -p ~/.boot
     - cp profile.boot ~/.boot/profile.boot
+    - npm install
   override:
     # Run tests
     # Run in dependency step to cache the deps
+    - ./test-extern-files.sh
     - ./test-changed.sh
 test:
   override:

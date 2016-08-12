@@ -1,6 +1,6 @@
 (set-env!
  :resource-paths #{"resources"}
- :dependencies '[[cljsjs/boot-cljsjs "0.5.1"  :scope "test"]])
+ :dependencies '[[cljsjs/boot-cljsjs "0.5.2"  :scope "test"]])
 
 (require '[cljsjs.boot-cljsjs.packaging :refer :all]
          '[boot.core :as boot]
@@ -45,4 +45,6 @@
    (minify :in "cljsjs/dom-delegator/development/dom-delegator.inc.js"
            :out "cljsjs/dom-delegator/production/dom-delegator.min.inc.js")
    (sift :include #{#"^cljsjs"})
-   (deps-cljs :name "cljsjs.dom-delegator")))
+   (deps-cljs :name "cljsjs.dom-delegator")
+   (pom)
+   (jar)))

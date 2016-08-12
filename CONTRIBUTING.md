@@ -4,6 +4,10 @@
 
 See [the wiki](https://github.com/cljsjs/packages/wiki/Creating-Packages).
 
+## Updating Packages
+
+See [the wiki](https://github.com/cljsjs/packages/wiki/Updating-packages).
+
 ## For information and help
 
 [Clojurians slack](https://clojurians.slack.com/) ([join](http://clojurians.net/))
@@ -77,7 +81,7 @@ run following command **from within the
 library-specific directory**:
 
 ```
-$ boot package pom jar install
+$ boot package install target
 ```
 
 This will run your package instructions and create a jar for the given

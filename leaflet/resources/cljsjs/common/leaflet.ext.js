@@ -95,9 +95,29 @@ var L = {
     "disableImageDrag": function () {},
     "enableImageDrag": function () {}
   },
-  "LatLng": function () {},
+  "LatLng": {
+    "lat": {},
+    "lng": {}
+  },
   "latLng": function () {},
-  "LatLngBounds": function () {},
+  "LatLngBounds": {
+    "extend": function() {},
+    "getSouthWest": function() {},
+    "getNorthEast": function() {},
+    "getNorthWest": function() {},
+    "getSouthEast": function() {},
+    "getWest": function() {},
+    "getSouth": function() {},
+    "getEast": function() {},
+    "getNorth": function() {},
+    "getCenter": function() {},
+    "contains": function() {},
+    "intersects": function() {},
+    "equals": function() {},
+    "toBBoxString": function() {},
+    "pad": function() {},
+    "isValid": function() {}
+  },
   "latLngBounds": function () {},
   "Projection": {
     "SphericalMercator": {
@@ -608,7 +628,13 @@ var L = {
   },
   "Map": function () {},
   "map": {
+    "addLayer": function () {},
+    "hasLayer": function () {},
+    "eachLayer": function () {},
+    "openPopup": function () {},
+    "closePopup": function () {},
     "addControl": function () {},
+    "removeControl": function () {},
     "setView": function () {},
     "setZoom": function () {},
     "setZoomIn": function () {},
@@ -633,10 +659,32 @@ var L = {
     "getBoundsZoom": function () {},
     "getSize": function () {},
     "getPixelBounds": function () {},
-    "getPixelOrigin": function () {},
+      "getPixelOrigin": function () {},
+      "attributionControl": {
+          "setPrefix": function () {},
+      },
+      "dragging": {
+          "disable": function () {},
+      },
+      "scrollWheelZoom": {
+          "disable": function () {},
+      },
+      "touchZoom": {
+          "disable": function () {},
+      },
+      "doubleClickZoom": {
+          "disable": function () {},
+      },
   },
   "TileLayer": function () {},
-  "tileLayer": function () {},
+  "tileLayer": {
+    "bringToFront": function () {},
+    "bringToBack": function () {},
+    "setOpacity": function () {},
+    "setZIndex": function () {},
+    "redraw": function () {},
+    "setUrl": function () {},
+  },
   "ImageOverlay": function () {},
   "imageOverlay": function () {},
   "Icon": {
@@ -675,8 +723,16 @@ var L = {
    },
   "LayerGroup": function () {},
   "layerGroup": {
+    "addTo": function () {},
     "addLayer": function () {},
+    "removeLayer": function () {},
+    "hasLayer": function () {},
+    "getLayer": function () {},
+    "getLayers": function () {},
+    "eachLayer": function () {},
     "clearLayers": function () {},
+    "hasLayer": function () {},
+    "toGeoJSON": function () {},
    },
   "FeatureGroup": function () {},
   "featureGroup": function () {},
@@ -756,8 +812,13 @@ var L = {
     "layers": {
       "addOverlay": function () {},
       "addBaseLayer": function () {},
-      "removeLayer": function () {},
-      },
+      "removeLayer": function () {}
+    },
+    "attribution": {
+      "setPrefix": function () {},
+      "addAttribution": function () {},
+      "removeAttribution": function () {}
+    }
   },
   "PosAnimation": function () {}
 };
