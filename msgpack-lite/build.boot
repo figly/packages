@@ -9,7 +9,7 @@
          '[boot.util :refer [sh]])
 
 (def +fork+ "figly")
-(def +lib-version+ "0.1.22-maps")
+(def +lib-version+ "0.1.25")
 (def +version+ (str +lib-version+ "-0"))
 
 (task-options!
@@ -37,7 +37,7 @@
 (deftask package []
   (comp
    (download :url (str "https://github.com/" +fork+ "/msgpack-lite/archive/" +lib-version+ ".zip")
-             :checksum "c72477e01c04d3dfcef25ca60fab1a75"
+             :checksum "3397130CBD1D2EF525E2F566488A355D"
              :unzip true)
    (build-msgpack-lite)
    (sift :move {#"^msgpack-lite-.*/dist/msgpack\.browserify\.js" "cljsjs/msgpack-lite/development/msgpack-lite.inc.js"
